@@ -3,6 +3,7 @@ return {
   {
     "yetone/avante.nvim",
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
+    build = "make",
     cmd = { "AvanteAsk", "AvanteChat", "AvanteToggle", "AvanteEdit" },
     lazy = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
