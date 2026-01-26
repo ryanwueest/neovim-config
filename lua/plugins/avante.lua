@@ -70,10 +70,10 @@ return {
 
         -- Suggestion navigation and actions
         suggestion = {
-          accept = "<leader>as",
-          next = "<leader>an",
-          prev = "<leader>ap",
-          dismiss = "<leader>ax",
+          accept = "<C-a>",
+          next = "<C-]>",
+          prev = "<C-[>",
+          dismiss = "<C-d>",
         },
 
         -- Jump between prompts
