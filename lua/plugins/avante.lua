@@ -4,8 +4,8 @@ return {
     "yetone/avante.nvim",
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
-    cmd = { "AvanteAsk", "AvanteChat", "AvanteToggle", "AvanteEdit" },
-    lazy = "VeryLazy",
+    -- Ensure Avante loads when Neovim enters an idle state so mappings are available
+    event = "VeryLazy",
     version = false, -- Never set this value to "*"! Never!
     dependencies = {
       "nvim-lua/plenary.nvim",
