@@ -47,6 +47,12 @@ return {
       default = { "lazydev", "lsp", "path", "snippets", "buffer", "copilot" },
       providers = {
         lazydev = { name = "LazyDev", module = "lazydev.integrations.blink", score_offset = 100 },
+        copilot = {
+          name = "copilot",
+          module = "blink-cmp-copilot",
+          score_offset = 100,
+          async = true,
+        },
       },
     },
     fuzzy = { implementation = "prefer_rust_with_warning" },
