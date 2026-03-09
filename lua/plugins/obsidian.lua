@@ -6,6 +6,7 @@ return {
   version = "*",
   lazy = true,
   ft = "markdown",
+  dependencies = { "nvim-lua/plenary.nvim" },
   opts = {
     workspaces = {
       {
@@ -15,27 +16,32 @@ return {
     },
 
     templates = {
-      subdir = "meta/templates",
-      date_format = "%Y-%m-%d",
-      time_format = "%H:%M:%S",
+      folder = "meta/templates",
+      date_format = "YYYY-MM-DD",
+      time_format = "HH:mm:ss",
     },
 
     daily_notes = {
       folder = "fleeting-notes",
-      date_format = "%Y-%m-%d",
+      date_format = "YYYY-MM-DD",
       default_tags = { "daily-note" },
       template = "daily-note-template.md",
     },
 
+    -- disable automatic completion initialization when nvim-cmp/blink.cmp aren't installed
     completion = {
-      blink = true,
+      nvim_cmp = false,
+      blink = false,
       min_chars = 2,
+      create_new = false,
     },
 
-    disable_frontmatter = true,
+    frontmatter = {
+      enabled = false,
+    },
 
     attachments = {
-      img_folder = "meta/assets",
+      folder = "meta/assets",
     },
 
     new_notes_location = "notes_subdir",
@@ -47,8 +53,8 @@ return {
   },
   keys = {
     { "<leader>no", "<cmd>cd " .. obsidian_path .. "<cr>", desc = "change directory to obsidian" },
-    { "<leader>nn", "<cmd>ObsidianTemplate note-template<cr>", desc = "apply note template" },
-    { "<leader>nj", "<cmd>ObsidianTemplate daily-note-template<cr>", desc = "apply daily note template" },
-    { "<leader>ns", "<cmd>ObsidianQuickSwitch<cr>", desc = "search obsidian vault" },
+    { "<leader>nn", "<cmd>Obsidian template note-template<cr>", desc = "apply note template" },
+    { "<leader>nj", "<cmd>Obsidian template daily-note-template<cr>", desc = "apply daily note template" },
+    { "<leader>ns", "<cmd>Obsidian quick_switch<cr>", desc = "search obsidian vault" },
   },
 }
