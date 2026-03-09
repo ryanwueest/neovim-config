@@ -28,6 +28,9 @@ return {
       opts = {},
     },
     "folke/lazydev.nvim",
+    -- Bridge to let Copilot provide completions to blink.cmp
+    -- Registers a `copilot` provider that blink expects
+    "giuxtaposition/blink-cmp-copilot",
   },
   version = "1.*",
   event = "InsertEnter",
